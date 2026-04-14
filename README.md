@@ -1,40 +1,35 @@
-# Backend API Project
+# FastAPI Backend Assignment
 
 ## Features
-- User Authentication (JWT)
-- Role-Based Access Control
+- JWT Authentication
+- Role-based access
 - Task CRUD APIs
-- Secure Password Hashing
+- Built-in Swagger docs
 
 ## Setup
 
 ```bash
-npm install
-npm run dev
+pip install -r requirements.txt
+uvicorn main:app --reload
 ```
 
-## Environment Variables
-Create a `.env` file:
+## API Docs
+Open:
+http://127.0.0.1:8000/docs
 
-```
-MONGO_URI=your_mongodb_connection
-JWT_SECRET=your_secret_key
-```
-
-## API Endpoints
+## Endpoints
 
 ### Auth
-- POST /api/v1/auth/register
-- POST /api/v1/auth/login
+POST /api/v1/auth/register
+POST /api/v1/auth/login
 
 ### Tasks
-- GET /api/v1/tasks
-- POST /api/v1/tasks
-- PUT /api/v1/tasks/:id
-- DELETE /api/v1/tasks/:id
+GET /api/v1/tasks
+POST /api/v1/tasks
+PUT /api/v1/tasks/{id}
+DELETE /api/v1/tasks/{id}
 
-## Scalability Notes
-- Can be split into microservices
-- Add Redis for caching
-- Use load balancers like NGINX
-- Database scaling via sharding/replication
+## Scalability
+- Can be extended to microservices
+- Add Redis caching
+- Use load balancing (NGINX)
